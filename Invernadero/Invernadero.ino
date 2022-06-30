@@ -7,7 +7,14 @@
 const char* ssid = "Redmi 9";
 const char* password =  "123456789";
 
-//Datos de Prueba para enviar
+//Variables ultrasonido
+const int Trigger = 26;
+const int Echo= 25;
+float Distancia, Duracion, Volumen, Porcentaje;
+
+//Variables humedad de tierra
+const int sensorYL = 27;
+
 
 void setup() {
   delay(10);
@@ -22,23 +29,35 @@ void setup() {
   }
   Serial.print("Conectado con éxito, mi IP es: ");
   Serial.println(WiFi.localIP());
+
+  //Ultrasonido
+  pinMode(Trigger, OUTPUT);
+  pinMode(Echo, INPUT);
 }
 
 void loop() {
 
   if(WiFi.status()== WL_CONNECTED){   //Check WiFi connection status
 
-    int temperatura = 51;
-    int humedad_aire = 52;
-    int humedad_tierra = 53;
-    int porcentaje_agua = 100;
+    float temperatura = 0;
+    float humedad_aire = 0;
+    float humedad_tierra = 0;
+    int porcentaje_agua = 0;
     String aux="a";
 
 
-
-
-
-
+    //Lectura sensor de ultrasonido
+    digitalWrite(Trigger, HIGH);
+    delay(1);
+    digitalWrite(Trigger,LOW);
+    Duracion = pulseIn(Echo,HIGH);
+    Distancia = Duracion/58.2;
+    //1.44 es el radio
+    Volumen = (320-Distancia)*1*0.031416;
+    Porcentaje = (Volumen * 100)/9.4248;
+    
+    porcentaje_agua = Porcentaje;
+    
 
     //POST de datos.
     
@@ -54,5 +73,5 @@ void loop() {
   }else{
      Serial.println("Error en la conexión WIFI");
   }
-   delay(30000);
+   delay(60000);
 }
