@@ -15,6 +15,5 @@ $row_array['fecha_hora'] = $array['fecha_hora'];
 array_push($jsonData,$row_array);
 }
 echo json_encode($jsonData);
-echo "Hola Listar";
 mysqli_close($con);
 ?>
