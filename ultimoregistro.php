@@ -4,7 +4,7 @@ define('USER','bb7b3ac1261bca');
 define('PASS','16234d12');
 define('DB','heroku_e5362bc152d88fb');
 $con = mysqli_connect(HOST,USER,PASS,DB);
-$sql = "SELECT temperatura, humedad_aire, humedad_tierra, fecha_hora, porcentaje_agua FROM `invernadero` LIMIT 1";
+$sql = "SELECT temperatura, humedad_aire, humedad_tierra, fecha_hora, porcentaje_agua FROM `invernadero` ORDER BY Id DESC LIMIT 1";
 $res = mysqli_query($con,$sql);
 $jsonData = array();
 while ($array = mysqli_fetch_array($res)) {
