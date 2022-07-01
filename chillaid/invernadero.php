@@ -1,5 +1,5 @@
 <?php
-    $var1 = "70";
+    $var1 = 70;
 ?>
 <!DOCTYPE html>
 <!--
