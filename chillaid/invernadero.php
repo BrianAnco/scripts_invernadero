@@ -1,5 +1,6 @@
 <?php
     $var1 = 70;
+    $var2 = "90";
 ?>
 <!DOCTYPE html>
 <!--
@@ -93,15 +94,15 @@ Licence URI: https://www.os-templates.com/template-terms
         <p>Porttitor</p>
       </li>
       <li class="pr-chart-ctrl" data-animate="false">
-        <div class="pr-chart" data-percent="50"><i></i></div>
+        <div class="pr-chart" data-percent=<?php $var1 ?>><i></i></div>
         <p>Condimentum</p>
       </li>
       <li class="pr-chart-ctrl" data-animate="false">
-        <div class="pr-chart" data-percent="75"><i></i></div>
+        <div class="pr-chart" data-percent="<?php $var2 ?>"><i></i></div>
         <p>Sollicitudin</p>
       </li>
       <li class="pr-chart-ctrl" data-animate="false">
-        <div class="pr-chart" data-percent="100"><i></i></div>
+        <div class="pr-chart" data-percent=<?php $var2 ?>><i></i></div>
         <p>Venenatis</p>
       </li>
     </ul>
