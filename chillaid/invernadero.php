@@ -1,7 +1,28 @@
 <?php
-    $var1 = 70;
-    $var2 = "90";
+define('HOST','us-cdbr-east-06.cleardb.net');
+define('USER','bb7b3ac1261bca');
+define('PASS','16234d12');
+define('DB','heroku_e5362bc152d88fb');
+$con = mysqli_connect(HOST,USER,PASS,DB);
+$sql = "SELECT temperatura, humedad_aire, humedad_tierra, fecha_hora, porcentaje_agua FROM `invernadero` ORDER BY Id DESC LIMIT 1";
+$res = mysqli_query($con,$sql);
+$jsonData = array();
+while ($array = mysqli_fetch_array($res)) {
+$row_array['temperatura'] = $array['temperatura'];
+$temperatura = $row_array['temperatura'];
+$row_array['humedad_aire'] = $array['humedad_aire'];
+$humedad_aire = $row_array['humedad_aire']
+$row_array['humedad_tierra'] = $array['humedad_tierra'];
+$humedad_tierra = $row_array['humedad_tierra']
+$row_array['fecha_hora'] = $array['fecha_hora'];
+$fecha_hora = $array['fecha_hora'];
+$row_array['porcentaje_agua'] = $array['porcentaje_agua'];
+$porcentaje_agua =  = $array['porcentaje_agua'];
+array_push($jsonData,$row_array);
+}
+mysqli_close($con);
 ?>
+
 <!DOCTYPE html>
 <!--
 Template Name: Chillaid
@@ -32,86 +53,33 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
   </div>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <main class="hoc container clear"> 
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-    <section id="introblocks">
-      <ul class="nospace group btmspace-80 elements elements-four">
-        <li class="one_quarter">
-          <article><a href="#"><i class="fas fa-hand-rock"></i></a>
-            <h6 class="heading">Feugiat fermentum</h6>
-            <p>Ac orci proin porttitor lacus eget mi pellentesque non.</p>
-          </article>
-        </li>
-        <li class="one_quarter">
-          <article><a href="#"><i class="fas fa-dove"></i></a>
-            <h6 class="heading">Malesuada accumsan</h6>
-            <p>Sapien sed metus congue sodales vivamus scelerisque.</p>
-          </article>
-        </li>
-        <li class="one_quarter">
-          <article><a href="#"><i class="fas fa-history"></i></a>
-            <h6 class="heading">Mauris placerat</h6>
-            <p>Et interdum vulputate purus nisl fringilla sapien quis.</p>
-          </article>
-        </li>
-        <li class="one_quarter">
-          <article><a href="#"><i class="fas fa-heartbeat"></i></a>
-            <h6 class="heading">Elementum rhoncus</h6>
-            <p>Sollicitudin dui mauris dui nunc lorem tortor pharetra.</p>
-          </article>
-        </li>
-      </ul>
-    </section>
-    <!-- ################################################################################################ -->
-    
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
   <section class="hoc container clear"> 
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
-      <p class="nospace font-xs">Rutrum erat nec mollis augue mauris</p>
-      <h6 class="heading font-x2">Ac pede phasellus commodo</h6>
+      <p class="nospace font-xs">Última toma de datos: </p>
+      <h6 class="heading font-x2"><?php echo $fecha_hora ?></h6>
     </div>
     <ul class="pr-charts nospace group center">
       <li class="pr-chart-ctrl" data-animate="false">
-        <div class="pr-chart" data-percent="<?php echo $var1 ?>"><i></i></div>
-        <p>Porttitor</p>
+        <div class="pr-chart" data-percent="<?php echo $humedad_aire?>"><i></i></div>
+        <p>Humedad en Aire</p>
       </li>
       <li class="pr-chart-ctrl" data-animate="false">
-        <div class="pr-chart" data-percent=<?php echo $var1 ?>><i></i></div>
-        <p>Condimentum</p>
+        <div class="pr-chart" data-percent="<?php echo $humedad_tierra?>"><i></i></div>
+        <p>Humedad en Tierra</p>
       </li>
       <li class="pr-chart-ctrl" data-animate="false">
-        <div class="pr-chart" data-percent="<?php echo $var2 ?>"><i></i></div>
-        <p>Sollicitudin</p>
-      </li>
-      <li class="pr-chart-ctrl" data-animate="false">
-        <div class="pr-chart" data-percent=<?php echo $var2 ?>><i></i></div>
-        <p>Venenatis</p>
+        <div class="pr-chart" data-percent="<?php echo $porcentaje_agua?>"><i></i></div>
+        <p>Nivel de Agua</p>
       </li>
     </ul>
     <!-- ################################################################################################ -->
   </section>
 </div>
 
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
