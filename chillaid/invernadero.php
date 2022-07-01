@@ -43,12 +43,12 @@ Licence URI: https://www.os-templates.com/template-terms
 <body id="top">
 <!-- ################################################################################################ -->
 
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png'); height: 350px;">
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png'); height: 345px;">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <article>
       <h3 class="heading">Control de Invernadero</h3>
-      <footer><a class="btn" href="#">Actualizar Datos</a></footer>
+      <footer><a class="btn" href="https://iotinvernadero.herokuapp.com/chillaid/invernadero.php">Actualizar Datos</a></footer>
     </article>
     <!-- ################################################################################################ -->
   </div>
