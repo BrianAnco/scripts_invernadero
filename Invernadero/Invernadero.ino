@@ -39,12 +39,13 @@ void loop() {
 
   if(WiFi.status()== WL_CONNECTED){   //Check WiFi connection status
 
-    float temperatura = 0;
-    float humedad_aire = 0;
-    float humedad_tierra = 0;
+    float temperatura = 16 + rand() % 20;
+    float humedad_aire = 65 + rand() % 75;
+    float humedad_tierra = 26 + rand() % 45;
     int porcentaje_agua = 0;
     String aux="a";
 
+    // 7 ES EL MÁXIMO
 
     //Lectura sensor de ultrasonido
     digitalWrite(Trigger, HIGH);
@@ -52,13 +53,17 @@ void loop() {
     digitalWrite(Trigger,LOW);
     Duracion = pulseIn(Echo,HIGH);
     Distancia = Duracion/58.2;
-    Serial.print("Distancia: ");
-    Serial.println(Distancia);  
-    //1.44 es el radio
-    Volumen = (320-Distancia)*0.0016*0.031416;
-    Serial.print("Volumen: ");
-    Serial.println(Volumen);  
-    Porcentaje = (Volumen * 100)/9.4248;
+    Serial.println(Distancia);
+
+    
+    float Altura = 9.7 - Distancia;
+    Porcentaje = 100 * Altura / 7;
+    Serial.print("Porcentaje: ");
+    Serial.println(Porcentaje);
+    //Volumen = (11-Distancia)*16*0.031416;
+    //Serial.println(Volumen);
+    //Porcentaje = (Volumen * 100)/9.4248;
+    //Serial.println(Porcentaje);
     
     porcentaje_agua = Porcentaje;
     
@@ -77,5 +82,5 @@ void loop() {
   }else{
      Serial.println("Error en la conexión WIFI");
   }
-   delay(30000);
+   delay(10000);
 }
