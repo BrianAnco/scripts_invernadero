@@ -17,7 +17,7 @@ $humedad_tierra = $row_array['humedad_tierra'];
 $row_array['fecha_hora'] = $array['fecha_hora'];
 $fecha_hora = $array['fecha_hora'];
 $row_array['porcentaje_agua'] = $array['porcentaje_agua'];
-$porcentaje_agua =  = $array['porcentaje_agua'];
+$porcentaje_agua = $array['porcentaje_agua'];
 array_push($jsonData,$row_array);
 }
 mysqli_close($con);
