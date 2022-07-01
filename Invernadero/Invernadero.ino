@@ -52,8 +52,12 @@ void loop() {
     digitalWrite(Trigger,LOW);
     Duracion = pulseIn(Echo,HIGH);
     Distancia = Duracion/58.2;
+    Serial.print("Distancia: ");
+    Serial.println(Distancia);  
     //1.44 es el radio
-    Volumen = (320-Distancia)*1*0.031416;
+    Volumen = (320-Distancia)*0.0016*0.031416;
+    Serial.print("Volumen: ");
+    Serial.println(Volumen);  
     Porcentaje = (Volumen * 100)/9.4248;
     
     porcentaje_agua = Porcentaje;
@@ -73,5 +77,5 @@ void loop() {
   }else{
      Serial.println("Error en la conexión WIFI");
   }
-   delay(60000);
+   delay(30000);
 }

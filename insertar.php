@@ -19,16 +19,15 @@ $sql = $con->prepare('INSERT INTO invernadero (temperatura,humedad_aire, humedad
 (?, ?, ?,?,?)');
 $sql->bind_param('sssss', $temperatura, $humedad_aire,$humedad_tierra, $fecha_hora, $porcentaje_agua);
 $sql->execute();
-echo 'OK\n';
 echo "Temperatura: ";
 echo $temperatura;
-echo "- Humedad del Aire: ";
+echo " - Humedad del Aire: ";
 echo $humedad_aire;
-echo "- Humedad de la Tierra: ";
+echo " - Humedad de la Tierra: ";
 echo $humedad_tierra;
-echo "- Fecha/Hora: ";
+echo " - Fecha/Hora: ";
 echo $fecha_hora;
-echo "- Porcentaje de Agua: ";
+echo " - Porcentaje de Agua: ";
 echo $porcentaje_agua
 ;
 $con->close();
