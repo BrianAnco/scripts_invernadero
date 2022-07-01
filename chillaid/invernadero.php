@@ -89,7 +89,7 @@ Licence URI: https://www.os-templates.com/template-terms
     </div>
     <ul class="pr-charts nospace group center">
       <li class="pr-chart-ctrl" data-animate="false">
-        <div class="pr-chart" data-percent="<?php$var1?>"><i></i></div>
+        <div class="pr-chart" data-percent="<?php $var1 ?>"><i></i></div>
         <p>Porttitor</p>
       </li>
       <li class="pr-chart-ctrl" data-animate="false">
