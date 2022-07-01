@@ -43,7 +43,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <body id="top">
 <!-- ################################################################################################ -->
 
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png'); height: 345px;">
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png'); height: 340px;">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <article>
