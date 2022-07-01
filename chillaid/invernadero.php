@@ -43,7 +43,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <body id="top">
 <!-- ################################################################################################ -->
 
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png'); height: 350px;">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <article>
@@ -76,12 +76,11 @@ Licence URI: https://www.os-templates.com/template-terms
         <div class="pr-chart" data-percent="<?php echo $porcentaje_agua?>"><i></i></div>
         <p>Nivel de Agua</p>
       </li>
-      <li class="one_quarter">
-          <article><a href="#"></a>
-            <h6 class="heading"><?php echo $temperatura ?> °C</h6>
-            <p>Temperatura</p>
-          </article>
-        </li>
+      <li class="pr-chart-ctrl" data-animate="false">
+        <br><br><br>
+        <h6 class="heading font-x2"><?php echo $temperatura?>°C</h6>
+        <br><br><br>
+      </li>
     </ul>
     <!-- ################################################################################################ -->
   </section>
