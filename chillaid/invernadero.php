@@ -55,12 +55,13 @@ Licence URI: https://www.os-templates.com/template-terms
 </div>
 
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
+<div class="wrapper row3 center">
   <section class="hoc container clear"> 
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
-      <p class="nospace font-xs">Última toma de datos: </p>
-      <h6 class="heading font-x2"><?php echo $fecha_hora ?></h6>
+      
+      <h6 class="heading font-x2">Última medición: </h6>
+      <p class="nospace font-xs"><?php echo $fecha_hora ?></p>
     </div>
     <ul class="pr-charts nospace group center">
       <li class="pr-chart-ctrl" data-animate="false">
@@ -75,6 +76,12 @@ Licence URI: https://www.os-templates.com/template-terms
         <div class="pr-chart" data-percent="<?php echo $porcentaje_agua?>"><i></i></div>
         <p>Nivel de Agua</p>
       </li>
+      <li class="one_quarter">
+          <article><a href="#"></a>
+            <h6 class="heading"><?php echo $temperatura ?> °C</h6>
+            <p>Temperatura</p>
+          </article>
+        </li>
     </ul>
     <!-- ################################################################################################ -->
   </section>
